@@ -1,0 +1,131 @@
+.background {
+  position: absolute;
+  z-index: -1;
+}
+
+.carbon-background {
+  background:
+  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+
+.white-background {
+  background-color: #eff1f3;
+}
+
+.carbon-fibre-background {
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
+}
+
+.trabalho {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #e55812;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.trabalho:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+#modalText {
+  padding-left: 5.5rem;
+  padding-right: 2rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.form-control {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ced4da;
+}
+
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+.background-black {
+  background-color: #0d1821;
+}
+
+#listra-laranja-modal {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #e55812;
+  right: 0px;
+  top:0px;
+  z-index: 0;
+}
+
+#iconesModal {
+  bottom: 1rem;
+  width: 100%;
+  position: absolute;
+  font-size: 2rem;
+}
+
+.z-3 {
+    z-index: 3;
+}
+
+#modalLogo{
+  padding: 8rem;
+  height: 34rem;
+}
+
+#closeModal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#floatingMensagem {
+  height: 204px;
+  resize: none;
+}
