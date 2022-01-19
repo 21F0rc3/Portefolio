@@ -8,16 +8,13 @@ import os
 
 app = Flask(__name__)
 
-mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": os.environ['EMAIL_USER'],
-    "MAIL_PASSWORD": os.environ['EMAIL_PASSWORD']
-}
+app.config['MAIL_SERVER']='smtp.mailtrap.io'
+app.config['MAIL_PORT'] = 2525
+app.config['MAIL_USERNAME'] = '4c68647ed5fca2'
+app.config['MAIL_PASSWORD'] = 'e89a598455961d'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
 
-app.config.update(mail_settings)
 mail = Mail(app)
 
 
@@ -30,7 +27,7 @@ def sendEmail():
     msg = Message(request.form['Assunto'],
                   body=request.form['Content'],
                   sender=request.form['Email'],
-                  recipients=[os.environ['EMAIL_USER']]);
+                  recipients=['gabrielforce21@gmail.com'];
 
     mail.send(msg);
     return index();
