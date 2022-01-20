@@ -1,66 +1,3 @@
-.carbon-background {
-  background:
-  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-  background-color: #131313;
-  background-size: 20px 20px;
-}
-
-.white-background {
-  background-color: #eff1f3;
-}
-
-.carbon-fibre-background {
-  background:
-  radial-gradient(black 15%, transparent 16%) 0 0,
-  radial-gradient(black 15%, transparent 16%) 8px 8px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-  background-color:#282828;
-  background-size:16px 16px;
-}
-
-.trabalho {
-  position: relative;
-}
-
-.image {
-  display: block;
-  width: 100%;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  background-color: #e55812;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: .5s ease;
-}
-
-.trabalho:hover .overlay {
-  bottom: 0;
-  height: 100%;
-}
-
-.text {
-  white-space: nowrap;
-  color: white;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
 .border-radius-50 {
   border-radius: 50%;
 }
@@ -88,11 +25,11 @@
   background-color: #0d1821;
 }
 
-#listra-laranja-modal {
+#listra-colorida-modal {
   position: absolute;
   width: 25%;
   height: 100%;
-  background-color: #e55812;
+  background-color: #5A7D7C;
   right: 0px;
   top:0px;
   z-index: 0;
@@ -130,10 +67,6 @@ a {
   color: currentColor;
 }
 
-img {
-  z-index: 1;
-}
-
 #front-page {
   background-image: url(/static/images/background.jpg);
   background-position: center;
@@ -156,4 +89,69 @@ img {
 
 #front-page-description > h4 {
   font-family: 'Playfair Display SC', serif;
+}
+
+.work {
+  position: relative;
+}
+
+.work-logo {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.work:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.work-text {
+  white-space: nowrap;
+  color: white;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.primary-color {
+  background-color: #ECEBE4;
+}
+
+.secondary-color {
+  background-color: #5A7D7C;
+}
+
+.terciary-color {
+  background-color: #20241E;
+}
+
+#work-title {
+  font-size: 2vw;
+  
+}
+
+#work-description {
+  font-size: 1.75vw;
+}
+
+#work-keywords {
+  font-size: 1.75vw;
+}
+
+#btn-contact-me {
+  background-color: #5A7D7C;
 }
