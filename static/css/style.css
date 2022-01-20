@@ -155,3 +155,12 @@ a {
 #btn-contact-me {
   background-color: #5A7D7C;
 }
+
+.carousel-item {
+  height: 25vh;
+}
+
+.project-page-title {
+  font-size: 8vw;
+  font-family: 'Abril Fatface', cursive;
+}

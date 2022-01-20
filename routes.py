@@ -8,6 +8,14 @@ from flask_mail import Mail
 def index():
     return render_template("index.html")
 
+@app.route("/projects/calorie")
+def calorie():
+    return render_template("calorie.html")
+
+@app.route("/projects/pageguild")
+def pageguild():
+    return render_template("pageguild.html")
+
 @app.route("/sendEmail", methods=['POST'])
 def sendEmail():
     mail = Mail(app)
