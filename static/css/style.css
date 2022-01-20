@@ -133,3 +133,27 @@ a {
 img {
   z-index: 1;
 }
+
+#front-page {
+  background-image: url(/static/images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#front-page-title {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 6vw;
+}
+
+#front-page-description {
+  color: rgb(153, 153, 153);
+}
+
+#front-page-description > p {
+  font-family: 'Bebas Neue', cursive;
+}
+
+#front-page-description > h4 {
+  font-family: 'Playfair Display SC', serif;
+}
