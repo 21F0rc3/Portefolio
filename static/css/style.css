@@ -203,3 +203,26 @@ a {
   box-shadow: none!important;
   outline: 0;
 }
+
+#sliding-text {
+  position: relative;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 9s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+#front-page-image > img {
+  filter: grayscale(70%);
+}
