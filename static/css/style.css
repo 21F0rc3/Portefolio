@@ -67,7 +67,7 @@ a {
   color: currentColor;
 }
 
-#front-page-image {
+#front-page-background {
   height: 110%;
   width: 110%;
   left: 0;
@@ -94,6 +94,10 @@ a {
 
 #front-page-description > h4 {
   font-family: 'Playfair Display SC', serif;
+  z-index: 9;
+}
+
+#front-page-image {
   z-index: 9;
 }
 
@@ -171,7 +175,7 @@ a {
   font-family: 'Abril Fatface', cursive;
 }
 
-html, body {
+#front-page {
   min-height: 100%;
   height: 100%;
   position: relative;
