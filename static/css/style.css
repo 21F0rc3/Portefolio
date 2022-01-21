@@ -224,5 +224,5 @@ a {
 }
 
 #front-page-image > img {
-  filter: grayscale(70%);
+  filter: grayscale(50%);
 }
