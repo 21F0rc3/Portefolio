@@ -73,13 +73,19 @@ a {
   left: 0;
   top: 0;
   position: absolute;
-  background: url(/static/images/background.jpg) no-repeat left center / cover;
+  background: url(/static/images/background.jpg) no-repeat center / cover;
 }
 
 #front-page-title {
   font-family: 'Abril Fatface', cursive;
-  font-size: 6vw;
   z-index: 9;
+  font-size: 7rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #front-page-title {
+    font-size: 5rem;
+  }
 }
 
 #front-page-description {
