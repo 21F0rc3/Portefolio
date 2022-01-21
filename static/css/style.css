@@ -156,16 +156,15 @@ a {
 }
 
 #work-title {
-  font-size: 2vw;
-  
+  font-size: 1rem;  
 }
 
 #work-description {
-  font-size: 1.75vw;
+  font-size: 0.75rem;
 }
 
 #work-keywords {
-  font-size: 1.75vw;
+  font-size: 0.75rem;
 }
 
 #btn-contact-me {
@@ -186,4 +185,21 @@ a {
   height: 100%;
   position: relative;
   overflow: hidden;
+}
+
+.btn.terciary-color {
+  color: #ECEBE4;
+}
+
+.btn.secondary-color {
+  border: 1px solid black;
+}
+
+.btn:hover {
+  filter: brightness(85%);
+}
+
+.btn:focus, .btn:active, .btn:hover{
+  box-shadow: none!important;
+  outline: 0;
 }
