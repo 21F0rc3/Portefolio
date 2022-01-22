@@ -1,0 +1,20 @@
+<section id="{{ id }}" class="col-7 my-5">
+    <h1>{{ title }}</h1>
+    
+    {% if img_url %}
+        <img class="col-12" src="{{ img_url }}" alt="Modelo E-R">
+    {% endif %}
+
+    {% for paragraph in paragraphs %}
+        <p>{{ paragraph }}</p>
+    {% endfor %}
+
+    {% if subsections %}
+        {% for subsection in subsections %}
+            <h2>{{ subsection[0] }}</h2>
+            {% for paragraph in subsection[1] %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+</section>

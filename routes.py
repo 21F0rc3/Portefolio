@@ -14,7 +14,6 @@ def calorie():
 
 @app.route("/projects/pageguild")
 def pageguild():
-    return calorie()
     return render_template("pageguild.html")
 
 @app.route("/sendEmail", methods=['POST'])
