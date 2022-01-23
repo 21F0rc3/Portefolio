@@ -2,6 +2,8 @@
 
 {% block title %}PageGuild | Wiki{% endblock %}
 
+{% block favicon %}<link rel="shortcut icon" href="{{ url_for('static', filename='calorie.ico') }}">{% endblock %}
+
 {% block header %}
     {% include '/calorie/carousel.html' %}
     <h2 class="text-center project-page-title">PageGuild</h2>
@@ -66,7 +68,7 @@
                             ] %}
             {% include '/includes/scrollspy.html' %}
         {% endwith %}
-        </div>
+    </div>
 {% endblock %}
 
 {% block footer %}
