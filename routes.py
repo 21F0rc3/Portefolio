@@ -4,6 +4,8 @@ from flask import request
 from app import app
 from flask_mail import Mail
 
+from controllers.projectController import getProjectContent
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -12,9 +14,10 @@ def index():
 def calorie():
     return render_template("calorie.html")
 
+
 @app.route("/projects/pageguild")
 def pageguild():
-    return render_template("pageguild.html")
+    return getProjectContent("PageGuild")
 
 @app.route("/sendEmail", methods=['POST'])
 def sendEmail():

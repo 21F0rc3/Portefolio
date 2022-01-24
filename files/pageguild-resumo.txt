@@ -1,0 +1,7 @@
+Resumo
+
+Neste projeto pretendemos desenvolver um website responsivo, cujo tema é uma livraria online, semelhante às conhecidas Bertrand, Wook, entre outras… 
+O website pode ser dividido em três partes : Utilizadores, Pagamentos, Artigos.
+Relativamente aos Utilizadores, teremos funcionalidades para registar utilizadores novos, Log In’s e edição das informações dos mesmos(morada, contacto, método de pagamento associado,etc...). Teremos também um “Vendedor”, que qualquer usuário pode ser, passando por um processo de registo, onde o usuário-vendedor pode vender os seus próprios artigos na loja. Utilizadores poderão, também, subscrever os seus autores preferidos, para estarem a par de novos lançamentos.
+Quanto aos pagamentos, o utilizador pode escolher um método de pagamento, definir a morada de entrega, e consultar a todo o momento o estado do envio. Vendas serão registradas, verificadas e ,se for o caso, confirmadas.
+Por fim, artigos representam todo o tipo de artigos vendidos na loja. Por agora, apenas Ebooks e Livros estão disponíveis, porém não descartamos a possível venda de outro tipo de artigos num futuro breve. Artigos poderão ser pesquisados e consultados no site por qualquer tipo de utilizador, inclusive aqueles que não se encontram registados(caso queiram efetuar a compra, terão que iniciar sessão). Outros tipos de pesquisa poderão ser feitos, gêneros/categorias, autores, editores. Estes artigos podem ser avaliados por clientes da loja, e adicionados às suas listas de desejos para saberem quando os seus artigos favoritos estão em promoção

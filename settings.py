@@ -10,3 +10,10 @@ app.config['MAIL_USERNAME'] = '4c68647ed5fca2'
 app.config['MAIL_PASSWORD'] = 'e89a598455961d'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
+
+
+################################
+#           Database           #
+################################
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portefolio.db'
