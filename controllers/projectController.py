@@ -36,6 +36,7 @@ def replaceFilesURLForContent(project_sections):
     for project_section in project_sections:
         aux = section()
 
+        aux.id = project_section.id
         aux.title = project_section.title
         aux.image_url = project_section.image_url
         

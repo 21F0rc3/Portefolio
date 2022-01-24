@@ -1,6 +1,6 @@
 <nav id="navbar-scrollspy" class="navbar navbar-light flex-column nav-pills position-sticky fixed-top align-items-stretch p-3">
     <a class="navbar-brand" href="#">{{ title }}</a>
     {% for index in indexes %}
-        <a class="nav-link" href="#{{ index[0] }}">{{ index[1] }}</a>
+        <a class="nav-link" href="#{{ index.id }}">{{ index.title }}</a>
     {% endfor %}
 </nav>

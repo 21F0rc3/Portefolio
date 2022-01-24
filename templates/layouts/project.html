@@ -32,6 +32,11 @@
           {% endfor %}
         </article>
       </div>
+      <div class="justify-content-end mx-0 col-md-0 col-lg-2">
+        {% with title=title, indexes=sections %}
+            {% include '/includes/scrollspy.html' %}
+        {% endwith %}
+      </div>
     </div>
   </div>
   <div id="footer">
