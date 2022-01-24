@@ -3,9 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy(app)
 
+# Import DB Tables
 import migrations.project
 import migrations.section
 
-db.create_all()
+# Create Tables
+#db.create_all()
 
+# Import seeder
 import seeder

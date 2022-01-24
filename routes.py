@@ -12,7 +12,7 @@ def index():
 
 @app.route("/projects/calorie")
 def calorie():
-    return render_template("calorie.html")
+    return render_template("wip.html")
 
 
 @app.route("/projects/pageguild")

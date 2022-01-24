@@ -1,0 +1,4 @@
+No diagrama de casos de uso existem 4 atores primários e 1 ator secundário.
+Por conseguinte, um Vendedor é um tipo de utilizador que já passou pelo processo de verificação e é elegível. O vendedor herda todas as funcionalidades do Logged User, e possui ainda a opção de vender os seus próprios artigos.
+Admin é um ator que representa os administradores do site, estes podem executar operações relativamente à gestão. Gerir artigos, editar informações, eliminar(ou desativar) artigos, bem como inserir e ativar/desativar promoções.
+Por ora, o ator secundário Attendant, apenas verifica as informações de um utilizador que pretende se tornar um vendedor, aprovando ou recusando, dependendo de regras a serem criadas para este processo.
