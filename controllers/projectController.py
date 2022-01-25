@@ -14,3 +14,25 @@ def getProjectContent(project_name):
     return render_template("/layouts/project.html", title=project_name, sections=project_sections)
 
 
+def createProject(request):
+    newProject = project(name=request.form['name'])
+    
+    db.session.add(newProject)
+    db.session.commit()
+
+    return redirect(url_for('admin'))
+
+def readProject():
+    return
+
+def updateProject(project_id):
+    return
+
+def deleteProject(project_id):
+    deleteProject = project.query.filter_by(id=project_id).first()
+
+    db.session.delete(deleteProject)
+    db.session.commit() 
+
+    return redirect(url_for('admin'))
+

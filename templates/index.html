@@ -11,3 +11,7 @@
 {% block footer %}
     {% include '/includes/footer.html' %}
 {% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/front-page.js') }}"></script>
+{% endblock %}

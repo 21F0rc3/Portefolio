@@ -1,0 +1,36 @@
+{% extends "/layouts/app.html" %}
+
+{% block title %}Gabriel Fernandes{% endblock %}
+
+{% block content %}
+
+<div id="crud_page">
+    {# Escolhemos um model #}
+    <select v-model="model">
+        <option disabled value="">Please select one</option>
+        <option>Project</option>
+        <option>Section</option>
+    </select>
+
+    {# Sera apresentado a respetiva form do model escolhido sem a pagina ser recarregada #}
+    <div v-if="model == 'Project'">
+        {% with projects=projects %}
+            {% include "/crud/projects.html" %}
+        {% endwith %}
+    </div>
+    <div v-else>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {% include '/includes/footer.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="{{ url_for('static', filename='js/crud.js') }}"></script>
+{% endblock %}

@@ -4,7 +4,8 @@ from flask import request
 from app import app
 from flask_mail import Mail
 
-from controllers.projectController import getProjectContent
+from controllers.crudController import crudPage
+from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
 
 @app.route("/")
 def index():
@@ -30,3 +31,20 @@ def sendEmail():
 
     mail.send(msg)
     return index()
+
+
+#############################
+#       Admin / CRUD        #
+#############################
+
+@app.route("/admin")
+def admin():
+    return crudPage()
+
+@app.route("/admin/project/create", methods=['POST'])
+def createProjectRoute():
+    return createProject(request)
+
+@app.route("/admin/project/delete/<project_id>")
+def deleteProjectRoute(project_id):
+    return deleteProject(project_id)

@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {% for project in projects %}
+    <tr>
+      <td>{{ project.id }}</td>
+      <td>{{ project.name }}</td>
+      <td></td>
+      <td><a href="{{ url_for('deleteProjectRoute', project_id=project.id) }}">Delete</a></td>
+    </tr>
+  {% endfor %}
+</table>
+
+<form method="post" action="{{ url_for('createProjectRoute') }}">
+  <div class="form-floating mb-3">
+    <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+    <label for="floatingInput">Name</label>
+  </div>
+
+  <input type="submit">
+</form>
