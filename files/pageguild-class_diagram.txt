@@ -1,0 +1,12 @@
+O diagrama de classes sofreu várias alterações desde a entrega do relatório intermediário. Dado que, a ferramenta utilizada no projeto será o Laravel, uma framework de php, tivemos que reavaliar a forma como iremos implementar.
+
+Assim sendo, podemos ver o diagrama de classes subdividido em Model, View e Controller.
+    	Model
+
+No Model, encontramos todas as classes que representam as tabelas da base de dados, apresentada no Modelo E-R. Estas classes são carregadas com os valores na base de dados
+    	View
+
+Na View, encontra-se todas as interfaces(ou HTML) das páginas webs. Ou seja, tudo aquilo que o utilizador irá ver..
+    	Controller
+
+No Controller, encontramos todas as classes que implementam toda a lógica da aplicação. Ela é responsável por buscar dados aos modelos e mostrar ao utilizador nas views, inserir novos dados recebidos pelas views nos modelos, atualizar valores, etc…

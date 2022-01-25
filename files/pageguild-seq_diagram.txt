@@ -1,0 +1,3 @@
+Este diagrama sofreu algumas alterações devido, principalmente, à troca de arquitetura, a qual optamos por usar o MVC. Neste diagrama está representado todas as interações no sistema desde a pesquisa de um artigo até exibir a sua página de detalhes. 
+
+Inicialmente, um utilizador logado procura um livro(por título, autor, gênero, etc...). A view(o que o utilizador vê, ou seja, a página web), pesquisa por qualquer combinação igual ao input do utilizador. Seguidamente, os resultados são retornados, e o utilizador pode escolher o livro. Por fim, a view pede pelas informações do artigo selecionado, e apresenta ao usuário. 
