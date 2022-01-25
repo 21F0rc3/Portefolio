@@ -15,15 +15,18 @@ def getProjectContent(project_name):
 
 
 def createProject(request):
-    newProject = project(name=request.form['name'])
+    newProject = project(name=request.form['name'],
+                         logo_file=request.form['logo_file'],
+                         description=request.form['description'],
+                         keywords=request.form['keywords'])
     
     db.session.add(newProject)
     db.session.commit()
 
     return redirect(url_for('admin'))
 
-def readProject():
-    return
+def readProject(project_name):
+    return getProjectContent(project_name)
 
 def updateProject(project_id):
     return

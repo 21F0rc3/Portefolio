@@ -1,17 +1,7 @@
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 p-4 mx-0 primary-color">
-      {% with title="Calorie", description="Calculadora de macros.", keywords="Java, JavaFX", img_url=url_for('static', filename='images/calorie.png'), page_url=url_for('calorie') %}
-        {% include '/works/workTemplate.html' %}
-      {% endwith %}
-
-      {% with title="Geocaching", description="Aplicação de Geocaching", keywords="Java, JavaFX", img_url=url_for('static', filename='images/geocaching.png'), page_url=url_for('calorie') %}
-        {% include '/works/workTemplate.html' %}
-      {% endwith %}
-
-      {% with title="PageGuild", description="Loja de livros Online", keywords="Laravel, PHP, Bootstrap, MVC", img_url=url_for('static', filename='images/pageguild.png'), page_url=url_for('pageguild') %}
-        {% include '/works/workTemplate.html' %}
-      {% endwith %}
-
-      {% with title="Kcal", description="Calculadora de macros.", keywords="HTML, CSS, JavaScript, JQuery", img_url=url_for('static', filename='images/kcal.png'), page_url=url_for('calorie') %}
-        {% include '/works/workTemplate.html' %}
-      {% endwith %}
+      {% for project in projects %}
+        {% with title=project.name, description=project.description, keywords=project.keywords, img_url=url_for('static', filename=project.logo_file), page_url=url_for('seeProjectDetails', project_name=project.name) %}
+          {% include '/works/workTemplate.html' %}
+        {% endwith %}
+      {% endfor %}
 </div>

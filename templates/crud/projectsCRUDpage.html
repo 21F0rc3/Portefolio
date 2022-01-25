@@ -2,6 +2,9 @@
   <tr>
     <th>#Id</th>
     <th>Name</th>
+    <th>Logo_File</th>
+    <th>Description</th>
+    <th>KeyWords</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -9,6 +12,9 @@
     <tr>
       <td>{{ project.id }}</td>
       <td>{{ project.name }}</td>
+      <td>{{ project.logo_file }}</td>
+      <td>{{ project.description }}</td>
+      <td>{{ project.keywords }}</td>
       <td>-/-</td>
       <td><a href="{{ url_for('deleteProjectRoute', project_id=project.id) }}">Delete</a></td>
     </tr>
@@ -19,6 +25,18 @@
   <div class="form-floating mb-3">
     <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
     <label for="floatingInput">Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="logo_file" type="text" class="form-control" id="floatingInput" placeholder="Project Logo">
+    <label for="floatingInput">Logo_file</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="description" type="text" class="form-control" id="floatingInput" placeholder="Project Description">
+    <label for="floatingInput">Description</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="keywords" type="text" class="form-control" id="floatingInput" placeholder="Project KeyWords">
+    <label for="floatingInput">KeyWords</label>
   </div>
 
   <input type="submit">

@@ -4,22 +4,21 @@ from flask import request
 from app import app
 from flask_mail import Mail
 
+from models.project import project
+
 from controllers.crudController import crudPage
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
 from controllers.sectionController import createSection, deleteSection
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    projects = project.query.all()
 
-@app.route("/projects/calorie")
-def calorie():
-    return render_template("wip.html")
+    return render_template("index.html", projects=projects)
 
-
-@app.route("/projects/pageguild")
-def pageguild():
-    return getProjectContent("PageGuild")
+@app.route("/projects/<project_name>")
+def seeProjectDetails(project_name):
+    return readProject(project_name)
 
 @app.route("/sendEmail", methods=['POST'])
 def sendEmail():
