@@ -28,23 +28,26 @@
   {% endwith %}
 {% endfor %}
 
-<form method="post" action="{{ url_for('createProjectRoute') }}">
-  <div class="form-floating mb-3">
-    <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
-    <label for="floatingInput">Name</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input name="logo_file" type="text" class="form-control" id="floatingInput" placeholder="Project Logo">
-    <label for="floatingInput">Logo_file</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input name="description" type="text" class="form-control" id="floatingInput" placeholder="Project Description">
-    <label for="floatingInput">Description</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input name="keywords" type="text" class="form-control" id="floatingInput" placeholder="Project KeyWords">
-    <label for="floatingInput">KeyWords</label>
-  </div>
+<div class="mt-5">
+  <h1>Create Project</h1>
+  <form method="post" action="{{ url_for('createProjectRoute') }}">
+    <div class="form-floating mb-3">
+      <input name="name" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+      <label for="floatingInput">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input name="logo_file" type="text" class="form-control" id="floatingInput" placeholder="Project Logo">
+      <label for="floatingInput">Logo_file</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input name="description" type="text" class="form-control" id="floatingInput" placeholder="Project Description">
+      <label for="floatingInput">Description</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input name="keywords" type="text" class="form-control" id="floatingInput" placeholder="Project KeyWords">
+      <label for="floatingInput">KeyWords</label>
+    </div>
 
-  <input type="submit">
-</form>
+    <input type="submit">
+  </form>
+</div>
