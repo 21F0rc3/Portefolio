@@ -1,0 +1,48 @@
+<div class="">
+    <table class="col-12">
+        <tr>
+            <th>#Id</th>
+            <th>Title</th>
+            <th>Image_URL</th>
+            <th>Content_File</th>
+            <th>Project_ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for section in sections %}
+        <tr>
+            <td>{{ section.id }}</td>
+            <td>{{ section.title }}</td>
+            <td>{{ section.image_url }}</td>
+            <td>{{ section.content_file }}</td>
+            <td>{{ section.project_id }}</td>
+            <td>-/-</td>
+            <td><a href="{{ url_for('deleteSectionRoute', section_id=section.id) }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="">
+  <form method="post" action="{{ url_for('createProjectRoute') }}">
+    <div class="form-floating mb-3">
+      <input name="title" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+      <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="image_url" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+        <label for="floatingInput">Image_URL</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="content_file" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+        <label for="floatingInput">Content_File</label>
+    </div>
+    <select name="project_id" class="form-select">
+        {% for project in projects %}
+        <option values="{{ project.id }}">{{ project.name }}</option>
+        {% endfor %}    
+    </select>
+  
+    <input class="mt-5" type="submit">
+  </form>
+</div>

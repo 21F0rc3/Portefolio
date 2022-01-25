@@ -6,6 +6,7 @@ from flask_mail import Mail
 
 from controllers.crudController import crudPage
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
+from controllers.sectionController import createSection, deleteSection
 
 @app.route("/")
 def index():
@@ -48,3 +49,12 @@ def createProjectRoute():
 @app.route("/admin/project/delete/<project_id>")
 def deleteProjectRoute(project_id):
     return deleteProject(project_id)
+
+
+@app.route("/admin/section/create", methods=['POST'])
+def createSectionRoute():
+    return createSection(request)
+
+@app.route("/admin/section/delete/<section_id>")
+def deleteSectionRoute(section_id):
+    return deleteSection(section_id)

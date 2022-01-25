@@ -1,6 +1,6 @@
-<table>
+<table class="col-12">
   <tr>
-    <th>Id</th>
+    <th>#Id</th>
     <th>Name</th>
     <th>Edit</th>
     <th>Delete</th>
@@ -9,7 +9,7 @@
     <tr>
       <td>{{ project.id }}</td>
       <td>{{ project.name }}</td>
-      <td></td>
+      <td>-/-</td>
       <td><a href="{{ url_for('deleteProjectRoute', project_id=project.id) }}">Delete</a></td>
     </tr>
   {% endfor %}

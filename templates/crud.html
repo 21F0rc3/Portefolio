@@ -3,26 +3,28 @@
 {% block title %}Gabriel Fernandes{% endblock %}
 
 {% block content %}
+    <div id="crud_page" class="row justify-content-center mx-0">
+        {# Escolhemos um model #}
+        <div class="col-2 mt-3">
+            <label>Model: </label>
+            <select v-model="model">
+                <option>Project</option>
+                <option>Section</option>
+            </select>
+        </div>
 
-<div id="crud_page">
-    {# Escolhemos um model #}
-    <select v-model="model">
-        <option disabled value="">Please select one</option>
-        <option>Project</option>
-        <option>Section</option>
-    </select>
-
-    {# Sera apresentado a respetiva form do model escolhido sem a pagina ser recarregada #}
-    <div v-if="model == 'Project'">
-        {% with projects=projects %}
-            {% include "/crud/projects.html" %}
-        {% endwith %}
+        {# Sera apresentado a respetiva form do model escolhido sem a pagina ser recarregada #}
+        <div v-if="model == 'Project'" class="p-5">
+            {% with projects=projects %}
+                {% include "/crud/projectsCRUDpage.html" %}
+            {% endwith %}
+        </div>
+        <div v-else-if="model == 'Section'" class="p-5">
+            {% with sections=sections, projects=projects %}
+                {% include "/crud/sectionsCRUDpage.html" %}
+            {% endwith %}
+        </div>
     </div>
-    <div v-else>
-
-    </div>
-</div>
-
 {% endblock %}
 
 {% block footer %}
