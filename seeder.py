@@ -1,5 +1,5 @@
-from migrations.project import project
-from migrations.section import section
+from models.project import project
+from models.section import section
 
 from database import db
 

@@ -1,8 +1,6 @@
-from email import charset
-from turtle import title
 from sqlalchemy import null
-from migrations.project import project
-from migrations.section import section
+from models.project import project
+from models.section import section
 from flask import render_template
 
 
