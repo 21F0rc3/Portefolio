@@ -3,7 +3,7 @@
         <tr>
             <th>#Id</th>
             <th>Title</th>
-            <th>Image_URL</th>
+            <th>Image_File</th>
             <th>Content_File</th>
             <th>Project_ID</th>
             <th>Edit</th>
@@ -16,22 +16,29 @@
             <td>{{ section.image_file }}</td>
             <td>{{ section.content_file }}</td>
             <td>{{ section.project_id }}</td>
-            <td>-/-</td>
+            <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSection{{ section.id }}">Edit</button></td>
             <td><a href="{{ url_for('deleteSectionRoute', section_id=section.id) }}">Delete</a></td>
         </tr>
         {% endfor %}
     </table>
+
+    {% for section in sections %}
+        <!-- Inclui um modal que e prenchido dinamicamente -->
+        {% with section=section, projects=projects %} 
+            {% include 'crud/editSectionModal.html' %}
+        {% endwith %}
+    {% endfor %}
 </div>
 
 <div class="">
-  <form method="post" action="{{ url_for('createProjectRoute') }}">
+  <form method="post" action="{{ url_for('createSectionRoute') }}">
     <div class="form-floating mb-3">
       <input name="title" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
       <label for="floatingInput">Title</label>
     </div>
     <div class="form-floating mb-3">
-        <input name="image_url" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
-        <label for="floatingInput">Image_URL</label>
+        <input name="image_file" type="text" class="form-control" id="floatingInput" placeholder="Project ">
+        <label for="floatingInput">Image_File</label>
     </div>
     <div class="form-floating mb-3">
         <input name="content_file" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
@@ -39,7 +46,7 @@
     </div>
     <select name="project_id" class="form-select">
         {% for project in projects %}
-        <option values="{{ project.id }}">{{ project.name }}</option>
+        <option value="{{ project.id }}">{{ project.name }}</option>
         {% endfor %}    
     </select>
   

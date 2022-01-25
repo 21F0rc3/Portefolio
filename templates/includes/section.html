@@ -1,20 +1,11 @@
-<section id="{{ id }}" class="col-7 my-5">
-    <h1>{{ title }}</h1>
+<section id="{{ section.id }}" class="col-7 my-5">
+    <h1>{{ section.title }}</h1>
     
-    {% if img_url %}
-        <img class="col-12" src="{{ img_url }}" alt="Modelo E-R">
+    {% if section.image_file %}
+        <img class="col-12" src="{{ url_for('static', filename=section.image_file) }}" alt="Modelo E-R">
     {% endif %}
 
-    {% for paragraph in paragraphs %}
+    {% for paragraph in section.content_file %}
         <p>{{ paragraph }}</p>
     {% endfor %}
-
-    {% if subsections %}
-        {% for subsection in subsections %}
-            <h2>{{ subsection[0] }}</h2>
-            {% for paragraph in subsection[1] %}
-                <p>{{ paragraph }}</p>
-            {% endfor %}
-        {% endfor %}
-    {% endif %}
 </section>

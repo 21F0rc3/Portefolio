@@ -8,7 +8,7 @@ from models.project import project
 
 from controllers.crudController import crudPage
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
-from controllers.sectionController import createSection, deleteSection
+from controllers.sectionController import createSection, updateSection, deleteSection
 
 @app.route("/")
 def index():
@@ -45,6 +45,10 @@ def admin():
 def createProjectRoute():
     return createProject(request)
 
+@app.route("/admin/project/update", methods=['POST'])
+def updateProjectRoute():
+    return updateProject(request)
+
 @app.route("/admin/project/delete/<project_id>")
 def deleteProjectRoute(project_id):
     return deleteProject(project_id)
@@ -53,6 +57,10 @@ def deleteProjectRoute(project_id):
 @app.route("/admin/section/create", methods=['POST'])
 def createSectionRoute():
     return createSection(request)
+
+@app.route("/admin/section/update", methods=['POST'])
+def updateSectionRoute():
+    return updateSection(request)
 
 @app.route("/admin/section/delete/<section_id>")
 def deleteSectionRoute(section_id):

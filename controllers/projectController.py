@@ -28,8 +28,17 @@ def createProject(request):
 def readProject(project_name):
     return getProjectContent(project_name)
 
-def updateProject(project_id):
-    return
+def updateProject(request):
+    updateProject = project.query.filter_by(id=request.form['project_id']).first()
+
+    updateProject.name = request.form['name']
+    updateProject.logo_file = request.form['logo_file']
+    updateProject.description = request.form['description']
+    updateProject.keywords = request.form['keywords']
+
+    db.session.commit()
+
+    return redirect(url_for('admin'))
 
 def deleteProject(project_id):
     deleteProject = project.query.filter_by(id=project_id).first()

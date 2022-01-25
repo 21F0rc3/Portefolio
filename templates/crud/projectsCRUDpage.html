@@ -15,11 +15,18 @@
       <td>{{ project.logo_file }}</td>
       <td>{{ project.description }}</td>
       <td>{{ project.keywords }}</td>
-      <td>-/-</td>
+      <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject{{ project.id }}">Edit</button></td>
       <td><a href="{{ url_for('deleteProjectRoute', project_id=project.id) }}">Delete</a></td>
     </tr>
   {% endfor %}
 </table>
+
+{% for project in projects %}
+  <!-- Inclui um modal que e prenchido dinamicamente -->
+  {% with project=project %} 
+    {% include 'crud/editProjectModal.html' %}
+  {% endwith %}
+{% endfor %}
 
 <form method="post" action="{{ url_for('createProjectRoute') }}">
   <div class="form-floating mb-3">
