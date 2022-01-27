@@ -1,0 +1,18 @@
+<div id="google_translate_element" style="display: none"></div>
+
+<div id="dropdownMenuButton" class="dropdown d-flex col-4 col-sm-4 col-md-4 col-lg-2">
+      <button class="btn btn-secondary dropdown-toggle col-12" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="col-4 col-md-2" src="{{ url_for('static', filename='images/google-translate.png') }}" alt="Google Translate Icon" />
+        <p class="d-none d-md-inline col-md-9">Choose a language</p>
+      </button>
+      <ul class="dropdown-menu col-12" aria-labelledby="dropdownMenuButton1">
+        <li><a href="javascript:;" id="Inglês" onclick="translateLanguage(this.id);">
+          <img class="col-4 col-md-2" src="https://cdn-icons-png.flaticon.com/512/197/197374.png" alt="" />
+          <p class="d-none d-md-inline col-md-9">English</p>
+        </a></li>
+        <li><a href="javascript:;" id="Português" onclick="translateLanguage(this.id);">
+          <img class="col-4 col-md-2" src="https://cdn-icons-png.flaticon.com/512/197/197463.png" alt="" />
+          <p class="d-none d-md-inline col-md-9">Portuguese</p>
+        </a></li>
+      </ul>
+</div>

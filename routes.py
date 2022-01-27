@@ -12,31 +12,6 @@ from controllers.crudController import crudPage
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
 from controllers.sectionController import createSection, updateSection, deleteSection
 
-babel = Babel(app)
-@babel.localeselector
-def get_locale():
-    # if the user has set up the language manually it will be stored in the session,
-    # so we use the locale from the user settings
-    try:
-        language = session['language']
-    except KeyError:
-        language = None
-    if language is not None:
-        return language
-    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
-
-@app.route('/language/<language>')
-def set_language(language=None):
-    session['language'] = language
-    return index()
-
-@app.context_processor
-def inject_conf_var():
-    return dict(
-                AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
-                CURRENT_LANGUAGE=session.get('language',request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
-
-
 @app.route("/")
 def index():
     projects = project.query.all()

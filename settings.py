@@ -32,7 +32,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portefolio.db'
 #################################
 #           Babel               #
 #################################
-
+"""
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
 
 
@@ -40,3 +40,4 @@ app.config['LANGUAGES'] = {
   'en': 'English',
   'pt': 'Portuguese'
 }
+"""
