@@ -27,3 +27,16 @@ app.config['SECURITY_PASSWORD_SALT'] = os.environ.get("SECURITY_PASSWORD_SALT", 
 ################################
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portefolio.db'
+
+
+#################################
+#           Babel               #
+#################################
+
+app.config['BABEL_DEFAULT_LOCALE'] = 'en'
+
+
+app.config['LANGUAGES'] = {
+  'en': 'English',
+  'pt': 'Portuguese'
+}

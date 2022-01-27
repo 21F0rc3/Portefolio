@@ -1,13 +1,13 @@
 <footer class="text-start terciary-color">
       <div class="d-flex justify-content-between p-4">
         <!-- Contact me -->
-        <button type="button" class="btn secondary-color" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Me!</button>
+        <button type="button" class="btn secondary-color" data-bs-toggle="modal" data-bs-target="#contactModal">{{ _('Contact Me!') }}</button>
         {% include '/includes/modal.html' %}
         <!-- Middle -->
         <ul class="nav justify-content-center">
           <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link px-2 text-muted">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">{{ _('About') }}</a></li>
         </ul>
         <!-- Redes sociais -->
         <span>

@@ -3,24 +3,24 @@
       <div class="modal-content white-background">
         <div class="modal-body p-0 m-0 row">
           <form id="modalText" class="col-6" method="POST" action="/sendEmail">
-            <h1>Contact me!</h1>
+            <h1>{{ _('Contact me!') }}</h1>
             <div class="form-floating">
-              <input type="text" class="form-control" id="floatingNome" name="Name" placeholder="Nome">
-              <label for="floatingNome">Nome</label>
+              <input type="text" class="form-control" id="floatingNome" name="Name" placeholder="{{ _('Name') }}">
+              <label for="floatingNome">{{ _('Name') }}</label>
             </div>
             <div class="form-floating">
-              <input type="text" class="form-control" id="floatingAssunto" name="Assunto" placeholder="Assunto">
-              <label for="floatingAssunto">Assunto</label>
+              <input type="text" class="form-control" id="floatingAssunto" name="Assunto" placeholder="{{ _('Subject') }}">
+              <label for="floatingAssunto">{{ _('Subject') }}</label>
             </div>
             <div class="form-floating">
-              <input type="email" class="form-control" id="floatingEmail" name="Email" placeholder="Email">
-              <label for="floatingEmail">Email</label>
+              <input type="email" class="form-control" id="floatingEmail" name="Email" placeholder="{{ _('E-mail') }}">
+              <label for="floatingEmail">{{ _('E-mail') }}</label>
             </div>
             <div class="form-floating">
-              <textarea class="form-control" id="floatingMensagem" rows="3" name="Content" placeholder="Mensagem..."></textarea>
-              <label for="floatingMensagem">Mensagem</label>
+              <textarea class="form-control" id="floatingMensagem" rows="3" name="Content" placeholder="{{ _('Message') }}..."></textarea>
+              <label for="floatingMensagem">{{ _('Message') }}</label>
             </div>
-            <button type="submit" class="btn btn-dark mt-2">Submit</button>
+            <button type="submit" class="btn btn-dark mt-2">{{ _('Submit') }}</button>
           </form>
           <div class="col-6">
             <div class="row h-100 justify-content-center align-items-center">

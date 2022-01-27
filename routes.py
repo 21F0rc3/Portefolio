@@ -1,15 +1,41 @@
 from flask_mail import Message
 from flask import render_template
-from flask import request
+from flask import request, session
 from app import app
 from flask_mail import Mail
 from flask_security import Security, SQLAlchemyUserDatastore, auth_required, hash_password
 from database import db, user_datastore
 from models.project import project
+from flask_babel import Babel, gettext
 
 from controllers.crudController import crudPage
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
 from controllers.sectionController import createSection, updateSection, deleteSection
+
+babel = Babel(app)
+@babel.localeselector
+def get_locale():
+    # if the user has set up the language manually it will be stored in the session,
+    # so we use the locale from the user settings
+    try:
+        language = session['language']
+    except KeyError:
+        language = None
+    if language is not None:
+        return language
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+
+@app.route('/language/<language>')
+def set_language(language=None):
+    session['language'] = language
+    return index()
+
+@app.context_processor
+def inject_conf_var():
+    return dict(
+                AVAILABLE_LANGUAGES=app.config['LANGUAGES'],
+                CURRENT_LANGUAGE=session.get('language',request.accept_languages.best_match(app.config['LANGUAGES'].keys())))
+
 
 @app.route("/")
 def index():

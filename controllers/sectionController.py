@@ -1,5 +1,8 @@
 from controllers.controllerImports import *
 
+"""
+    Cria uma nova secção na base de dados
+"""
 def createSection(request):
     newSection = section(title=request.form['title'],
                          image_file=request.form['image_file'],
@@ -11,9 +14,15 @@ def createSection(request):
 
     return redirect(url_for('admin'))
 
+"""
+    Le uma secção da base de dados
+"""
 def readSection():
     return
 
+"""
+    Atualiza os dados de uma secção na base de dados
+"""
 def updateSection(request):
     updateSection = section.query.filter_by(id=request.form['section_id']).first()
 
@@ -26,6 +35,10 @@ def updateSection(request):
 
     return redirect(url_for('admin'))
 
+
+"""
+    Elimina uma secção na base de dados
+"""
 def deleteSection(section_id):
     deleteSection = section.query.filter_by(id=section_id).first()
 
