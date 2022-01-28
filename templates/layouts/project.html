@@ -20,8 +20,6 @@
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-  {% include '/includes/translate.html' %}
-
   <div id="content">
     {% with logo=project.logo_file %}
       {% include '/includes/carousel.html' %}
