@@ -63,8 +63,8 @@
 }
 
 a {
-  text-decoration: none;
-  color: currentColor;
+  text-decoration: none !important;
+  color: currentColor !important;
 }
 
 #front-page-background {
@@ -251,27 +251,19 @@ a {
 .goog-te-banner-frame.skiptranslate {display: none!important;}
 body {top: 0px!important;}
 
-/*
-#dropdownMenuButton, #dropdownMenuButton>ul {
-  background-color: rgba(255,255,255,0.20)!important;
-  border: 1px solid rgba(255,255,255,0.50) !important;
-  border-radius: 4px!important;
-  position: absolute;
-  top: 0;
-  right: 0%;
-  z-index: 1000;
-}*/
-
 #dropdownMenuButton ul {
-  background-color: rgba(255,255,255,0.20)!important;
-  border: 1px solid rgba(255,255,255,0.50) !important;
-  border-radius: 4px!important;
-  
-  z-index: 1000;
-  color: black;
-  text-transform: uppercase;
+  min-width: max-content;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 10;
+  color: rgb(153, 153, 153);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 100;
   text-decoration: none;
   font-size: 1rem;
+}
+
+#dropdownMenuButton ul>li:hover {
+  background-color: rgba(255, 255, 255, 0.616)!important;
 }
 
 #dropdownMenuButton {
@@ -286,7 +278,7 @@ body {top: 0px!important;}
 }
 
 #dropdownMenuButton > ul  img {
-  height: 3rem;
+  height: 2rem;
 }
 
 #dropdownMenuButton > div img {
@@ -298,18 +290,28 @@ body {top: 0px!important;}
   animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
 }
 
-#line {
+#line-container {
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  z-index: 100;
+}
+
+.line {
   padding-top: 25px;
   padding-bottom: 25px;
-  position: absolute;
   width: 0%;
   height: 0px;
-  top: 0;
   align-items: center;
   font-size: 0;
 }
 
-#line > div {
+.line img {
+  height: inherit;
+  padding: 10px;
+}
+
+.line > div {
   background-color: white;
   height: -webkit-fill-available;
 }
