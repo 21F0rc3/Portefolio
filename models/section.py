@@ -6,3 +6,6 @@ class section(db.Model):
     image_file = db.Column(db.Text())
     content_file = db.Column(db.Text(), nullable=False)
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
+
+    def getAttributes():
+        return ["id","title","image_file","content_file","project_id"]

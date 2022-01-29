@@ -6,3 +6,6 @@ class project(db.Model):
     logo_file = db.Column(db.Text())
     description = db.Column(db.Text())
     keywords = db.Column(db.Text())
+
+    def getAttributes():
+        return ["id","name","logo_file","description","keywords"]

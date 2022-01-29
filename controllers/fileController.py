@@ -5,7 +5,7 @@ from controllers.controllerImports import *
 """
 def readFile(file_url):
     try:
-        file = open('files/'+file_url, 'r', encoding='utf-8').readlines()
+        file = open('static/files/'+file_url, 'r', encoding='utf-8').readlines()
     
     except:
         print("Algo deu errado ao tentar acessar o ficheiro: "+file_url)

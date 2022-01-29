@@ -1,0 +1,33 @@
+<table class="col-12">
+    <tr>
+      {% for header in tables.table_headers %}
+        <th>{{ header }}</th>
+      {% endfor %}
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    {% for row in tables.table_content %}
+    <tr>
+        {% for columns in row %}
+        <td>{{ columns }}</td>
+        {% endfor %}
+        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{ model }}{{ row[0] }}">Edit</button></td>
+        <td><a href="{{ url_for('deleteRoute', table=model, id=row[0]) }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="mt-5">
+  <h1>Create {{ model }}</h1>
+  <form method="post" action="{{ url_for('createRoute', table=model) }}">
+    {% for header in tables.table_headers %}
+      {% if header != 'id' %}
+      <div class="form-floating mb-3">
+        <input name="{{ header }}" type="text" class="form-control" id="floatingInput" placeholder="Project {{ header }}">
+        <label for="floatingInput">{{ header }}</label>
+      </div>
+      {% endif %}
+    {% endfor %}
+    <input type="submit">
+  </form>
+</div>

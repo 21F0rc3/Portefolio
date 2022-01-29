@@ -3,11 +3,14 @@
 {% block title %}Gabriel Fernandes{% endblock %}
 
 {% block content %}
+    <!-- Capa -->
     {% include '/front-page/front-page.html' %}
 
+    <!-- Trabahos -->
     {% include '/works/works.html' %}
 {% endblock %}
 
 {% block scripts %}
+    <!-- Front-End para a Capa -->
     <script src="{{ url_for('static', filename='js/front-page.js') }}"></script>
 {% endblock %}

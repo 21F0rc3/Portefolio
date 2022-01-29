@@ -8,7 +8,7 @@ from database import db, user_datastore
 from models.project import project
 from flask_babel import Babel, gettext
 
-from controllers.crudController import crudPage
+from controllers.crudController import *
 from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
 from controllers.sectionController import createSection, updateSection, deleteSection
 
@@ -43,6 +43,27 @@ def sendEmail():
 @auth_required()
 def admin():
     return crudPage()
+
+
+
+
+
+
+
+@app.route("/admin/delete/<table>/<id>")
+def deleteRoute(table, id):
+    return deleteTableRecord(table, id)
+
+@app.route("/admin/create/<table>", methods=['POST'])
+def createRoute(table):
+    return createTableRecord(table, request)
+
+@app.route("/admin/update/<table>", methods=['POST'])
+def updateRoute(table):
+    return updateTableRecord(table, request)
+
+
+
 
 @app.route("/admin/project/create", methods=['POST'])
 @auth_required()

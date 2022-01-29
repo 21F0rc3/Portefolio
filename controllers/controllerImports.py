@@ -8,4 +8,5 @@ from models.project import project
 
 # Controllers
 from controllers.fileController import replaceFilesURLForContent, readFile
-#from controllers.projectController import getProjectContent 
+from controllers.projectController import deleteProject, createProject, updateProject
+from controllers.sectionController import deleteSection, createSection, updateSection

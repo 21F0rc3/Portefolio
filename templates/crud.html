@@ -15,14 +15,28 @@
 
         {# Sera apresentado a respetiva form do model escolhido sem a pagina ser recarregada #}
         <div v-if="model == 'Project'" class="p-5">
-            {% with projects=projects %}
-                {% include "/crud/projectsCRUDpage.html" %}
+            {% with tables=tables[0], model='project' %}
+                {% include "/crud/tableView.html" %}
             {% endwith %}
+
+            {% for project in tables[0].table_content %}
+                <!-- Inclui um modal que e prenchido dinamicamente -->
+                {% with project=project %} 
+                    {% include 'crud/editProjectModal.html' %}
+                {% endwith %}
+            {% endfor %}
         </div>
         <div v-else-if="model == 'Section'" class="p-5">
-            {% with sections=sections, projects=projects %}
-                {% include "/crud/sectionsCRUDpage.html" %}
+            {% with tables=tables[1], model='section' %}
+                {% include "/crud/tableView.html" %}
             {% endwith %}
+
+            {% for section in tables[1].table_content %}
+                <!-- Inclui um modal que e prenchido dinamicamente -->
+                {% with section=section, projects=tables[0].table_content %} 
+                    {% include 'crud/editSectionModal.html' %}
+                {% endwith %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
@@ -30,5 +44,7 @@
 {% block scripts %}
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <!-- Front-End para o CRUD -->
     <script src="{{ url_for('static', filename='js/crud.js') }}"></script>
 {% endblock %}

@@ -1,4 +1,5 @@
 <div id="carousel" class="carousel slide terciary-color mt-5" data-bs-ride="carousel">
+    <!-- Imagens no carousel -->
     <div class="carousel-inner text-center">
       <div class="carousel-item active" data-bs-interval="10000">
         <img class="h-100" src="{{ url_for('static', filename=logo) }}" alt="...">
@@ -11,12 +12,13 @@
       </div>
     </div>
 
+    <!-- Botões de controlo -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{ _('Previous') }}</span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">{{ _('Next') }}</span>
+      <span class="visually-hidden">Next</span>
     </button>
   </div>

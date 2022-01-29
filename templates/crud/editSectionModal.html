@@ -1,27 +1,27 @@
-<div class="modal fade" id="editSection{{ section.id }}" tabindex="-1" aria-labelledby="editSection{{ section.id }}Label" aria-hidden="true">
+<div class="modal fade" id="editsection{{ section[0] }}" tabindex="-1" aria-labelledby="editSection{{ section[0] }}Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">      
       <div class="modal-body">
-        <form method="post" action="{{ url_for('updateSectionRoute') }}">
+        <form method="post" action="{{ url_for('updateRoute', table='section') }}">
           <div class="form-floating mb-3">
-            <input name="section_id" value="{{ section.id }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+            <input name="section_id" value="{{ section[0] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
             <label for="floatingInput">#ID</label>
           </div>
           <div class="form-floating mb-3">
-            <input name="title" value="{{ section.title }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+            <input name="title" value="{{ section[1] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
             <label for="floatingInput">Title</label>
           </div>
           <div class="form-floating mb-3">
-              <input name="image_file" value="{{ section.image_file }}" type="text" class="form-control" id="floatingInput" placeholder="Project ">
+              <input name="image_file" value="{{ section[2] }}" type="text" class="form-control" id="floatingInput" placeholder="Project ">
               <label for="floatingInput">Image_File</label>
           </div>
           <div class="form-floating mb-3">
-              <input name="content_file" value="{{ section.content_file }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
+              <input name="content_file" value="{{ section[3] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
               <label for="floatingInput">Content_File</label>
           </div>
           <select name="project_id" class="form-select">
               {% for project in projects %}
-              <option value="{{ project.id }}">{{ project.name }}</option>
+              <option value="{{ project[0] }}">{{ project[1] }}</option>
               {% endfor %}    
           </select>
 
