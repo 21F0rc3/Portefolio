@@ -16,18 +16,3 @@
     </tr>
     {% endfor %}
 </table>
-
-<div class="mt-5">
-  <h1>Create {{ model }}</h1>
-  <form method="post" action="{{ url_for('createRoute', table=model) }}">
-    {% for header in tables.table_headers %}
-      {% if header != 'id' %}
-      <div class="form-floating mb-3">
-        <input name="{{ header }}" type="text" class="form-control" id="floatingInput" placeholder="Project {{ header }}">
-        <label for="floatingInput">{{ header }}</label>
-      </div>
-      {% endif %}
-    {% endfor %}
-    <input type="submit">
-  </form>
-</div>

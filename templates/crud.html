@@ -17,6 +17,7 @@
         <div v-if="model == 'Project'" class="p-5">
             {% with tables=tables[0], model='project' %}
                 {% include "/crud/tableView.html" %}
+                {% include "/crud/createForm.html" %}
             {% endwith %}
 
             {% for project in tables[0].table_content %}
@@ -29,6 +30,7 @@
         <div v-else-if="model == 'Section'" class="p-5">
             {% with tables=tables[1], model='section' %}
                 {% include "/crud/tableView.html" %}
+                {% include "/crud/createForm.html" %}
             {% endwith %}
 
             {% for section in tables[1].table_content %}

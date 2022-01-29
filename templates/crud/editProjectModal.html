@@ -3,27 +3,21 @@
       <div class="modal-content">      
         <div class="modal-body">
           <form method="post" action="{{ url_for('updateRoute', table='project') }}">
-            <div class="form-floating mb-3">
-                <input name="project_id" value="{{ project[0] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
-                <label for="floatingInput">#ID</label>
-              </div>
-            <div class="form-floating mb-3">
-                <input name="name" value="{{ project[1] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Name">
-                <label for="floatingInput">Name</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input name="logo_file" value="{{ project[2] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Logo">
-                <label for="floatingInput">Logo_file</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input name="description" value="{{ project[3] }}" type="text" class="form-control" id="floatingInput" placeholder="Project Description">
-                <label for="floatingInput">Description</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input name="keywords" value="{{ project[4] }}" type="text" class="form-control" id="floatingInput" placeholder="Project KeyWords">
-                <label for="floatingInput">KeyWords</label>
-              </div>
-            
+              {% with input='project_id' , value=project[0] , placeholder='Project ID' %}
+                  {% include "/includes/inputForm.html" %}
+              {% endwith %}
+              {% with input='name' , value=project[1] , placeholder='Project Name' %}
+                  {% include "/includes/inputForm.html" %}
+              {% endwith %}
+              {% with input='logo_file' , value=project[2] , placeholder='Project logo_file' %}
+                  {% include "/includes/inputForm.html" %}
+              {% endwith %}
+              {% with input='description' , value=project[3] , placeholder='Project description' %}
+                  {% include "/includes/inputForm.html" %}
+              {% endwith %}
+              {% with input='keywords' , value=project[4] , placeholder='Project keywords' %}
+                  {% include "/includes/inputForm.html" %}
+              {% endwith %}
               <input type="submit">
           </form>   
         </div>
