@@ -5,7 +5,7 @@ function googleTranslateElementInit() {
 var selectedLang = 'en';
 
 $(".dropdown-menu").find("a").click(function() {   
-  var newElem = "<div class='line lineAnimation'><div>"+$(this).html()+"</div></div>";
+  var newElem = "<div class='line lineAnimation'><div class='sixth-color'>"+$(this).html()+"</div></div>";
 
   $(".line").remove();
 

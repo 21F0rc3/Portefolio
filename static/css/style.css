@@ -2,13 +2,6 @@
   border-radius: 50%;
 }
 
-#modalText {
-  padding-left: 5.5rem;
-  padding-right: 2rem;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
 .form-control {
   background-color: rgba(0,0,0,0);
   border: none;
@@ -23,38 +16,6 @@
 
 .background-black {
   background-color: #0d1821;
-}
-
-#listra-colorida-modal {
-  position: absolute;
-  width: 25%;
-  height: 100%;
-  background-color: #5A7D7C;
-  right: 0px;
-  top:0px;
-  z-index: 0;
-}
-
-#iconesModal {
-  bottom: 1rem;
-  width: 100%;
-  position: absolute;
-  font-size: 2rem;
-}
-
-.z-3 {
-    z-index: 3;
-}
-
-#modalLogo{
-  padding: 8rem;
-  height: 34rem;
-}
-
-#closeModal {
-  position: absolute;
-  top: 0px;
-  right: 0px;
 }
 
 #floatingMensagem {
@@ -144,15 +105,32 @@ a {
 }
 
 .primary-color {
-  background-color: #ECEBE4;
+  background-color: #F5F6F4;
 }
 
 .secondary-color {
-  background-color: #5A7D7C;
+  background-color: #0E3B43;
 }
 
 .terciary-color {
   background-color: #20241E;
+}
+
+.fourth-color {
+  background-color: #357266;
+}
+
+svg.fourth-color {
+  background-color: transparent;
+  fill: #357266;
+}
+
+.fifth-color {
+  background-color: #5A7D7C;
+}
+
+.sixth-color {
+  background-color: #A71D31;
 }
 
 #work-title {
@@ -315,7 +293,6 @@ body {top: 0px!important;}
 }
 
 .line > div {
-  background-color: #5A7D7C;
   height: -webkit-fill-available;
 }
 
@@ -360,6 +337,5 @@ body {top: 0px!important;}
 }
 
 #projectNavbar {
-  background-color: white;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
