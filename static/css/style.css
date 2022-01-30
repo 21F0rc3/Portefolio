@@ -14,18 +14,9 @@
   box-shadow: none;
 }
 
-.background-black {
-  background-color: #0d1821;
-}
-
 #floatingMensagem {
   height: 204px;
   resize: none;
-}
-
-a {
-  text-decoration: none !important;
-  color: currentColor !important;
 }
 
 #front-page-background {
@@ -33,39 +24,26 @@ a {
   width: 110%;
   left: 0;
   top: 0;
+  z-index: -1;
   position: absolute;
   background: url(/static/images/background.jpg) no-repeat center / cover;
 }
 
-#front-page-title {
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.Abril-Fatface-Font {
   font-family: 'Abril Fatface', cursive;
-  z-index: 9;
-  font-size: 7rem;
 }
 
-@media only screen and (max-width: 768px) {
-  #front-page-title {
-    font-size: 5rem;
-  }
-}
-
-#front-page-description {
-  color: rgb(153, 153, 153);
-  z-index: 9;
-}
-
-#front-page-description > p {
+.Bebas-Neue-Font {
   font-family: 'Bebas Neue', cursive;
-  z-index: 9;
 }
 
-#front-page-description > h4 {
+.Playfair-Display-SC-Font {
   font-family: 'Playfair Display SC', serif;
-  z-index: 9;
-}
-
-#front-page-image {
-  z-index: 9;
 }
 
 .work {
@@ -133,6 +111,15 @@ svg.fourth-color {
   background-color: #A71D31;
 }
 
+.seventh-color {
+  background-color: rgba(255, 255, 255, 0.616);
+}
+
+svg.seventh-color {
+  background-color: transparent;
+  fill: #ffffff9d;
+}
+
 #work-title {
   font-size: 1rem;  
 }
@@ -149,10 +136,6 @@ svg.fourth-color {
   background-color: #5A7D7C;
 }
 
-.carousel-item {
-  height: 25vh;
-}
-
 .project-page-title {
   font-size: 8vw;
   font-family: 'Abril Fatface', cursive;
@@ -163,6 +146,41 @@ svg.fourth-color {
   height: 100%;
   position: relative;
   overflow: hidden;
+}
+
+#front-page h1 {
+  font-size: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  #front-page h1 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #front-page h1 {
+    font-size: 7rem;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  #front-page-avatar {
+    width: 16.66%;
+  }
+
+  #front-page h1 {
+    font-size: 4rem;
+  }
+}
+
+#front-page-avatar {
+  filter: grayscale(50%);
+}
+
+#front-page *.seventh-color {
+  background-color: transparent;
+  color: #ffffff9d;
 }
 
 .btn.terciary-color {
@@ -338,4 +356,19 @@ body {top: 0px!important;}
 
 #projectNavbar {
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+section p {
+  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 20px;
+  letter-spacing: -0.003em;
+  line-height: 32px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+section h1 {
+  font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.016em;
+  font-weight: 700;
 }

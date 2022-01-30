@@ -1,11 +1,11 @@
-<section id="{{ section.id }}" class="col-7 my-5">
-    <h1>{{ section.title }}</h1>
+<section id="{{ section.id }}" class="col-10 col-md-9 col-xl-7 my-5">
+    <h1 class="mb-4">{{ section.title }}</h1>
     
     {% if section.image_file %}
         <img class="col-12" src="{{ url_for('static', filename=section.image_file) }}" alt="Modelo E-R">
     {% endif %}
 
     {% for paragraph in section.content_file %}
-        <p>{{ paragraph }}</p>
+        <p class="mt-2">{{ paragraph }}</p>
     {% endfor %}
 </section>

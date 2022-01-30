@@ -12,7 +12,7 @@
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=DM+Serif+Display&family=Playfair+Display+SC:wght@700&display=swap" rel="stylesheet">
     
     <!-- Meu CSS -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
     
     <!-- Content -->
     <div class="row mx-0">
-      <div class="col-md-12 col-lg-10" data-bs-spy="scroll" data-bs-target="#navbar-scrollspy" data-bs-offset="0" tabindex="0">
+      <div class="col-md-12 col-lg-9 col-xl-10 order-2 order-lg-1" data-bs-spy="scroll" data-bs-target="#navbar-scrollspy" data-bs-offset="0" tabindex="0">
         <article class="row row-cols-1 justify-content-center mx-0">
           {% for section in sections %}
             {% with section=section %}
@@ -43,7 +43,7 @@
           {% endfor %}
         </article>
       </div>
-      <div class="justify-content-end mx-0 col-md-0 col-lg-2">
+      <div class="justify-content-end mx-0 col-md-0 col-lg-3 col-xl-2 order-1 order-lg-2">
         {% with title=project.name, indexes=sections %}
             {% include '/includes/scrollspy.html' %}
         {% endwith %}
