@@ -21,6 +21,9 @@
 </head>
 <body>
   <div id="content">
+    <!-- Navbar -->
+    {% include '/includes/projectNav.html' %}
+
     <!-- Carousel Logo -->
     {% with logo=project.logo_file %}
       {% include '/includes/carousel.html' %}
@@ -64,5 +67,7 @@
 
   <!-- scrollspy -->
   <script src="{{ url_for('static', filename='js/scrollspy.js') }}"></script>
+  <!-- project-page -->
+  <script src="{{ url_for('static', filename='js/project-page.js') }}"></script>
 </body>
 </html>

@@ -251,7 +251,7 @@ a {
 .goog-te-banner-frame.skiptranslate {display: none!important;}
 body {top: 0px!important;}
 
-#dropdownMenuButton ul {
+.translate-dropdown ul {
   min-width: max-content;
   background-color: rgba(255,255,255,0.07);
   border-radius: 10;
@@ -262,38 +262,41 @@ body {top: 0px!important;}
   font-size: 1rem;
 }
 
-#dropdownMenuButton ul>li:hover {
+.translate-dropdown ul>li:hover {
   background-color: rgba(255, 255, 255, 0.616)!important;
 }
 
-#dropdownMenuButton {
+#translateFrontPage {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 100;
 }
 
-#dropdownMenuButton > button {
+.translate-dropdown > button {
   color: rgb(153, 153, 153);
 }
 
-#dropdownMenuButton > ul  img {
+#translateFrontPage > button:hover {
+  color: rgb(153, 153, 153);
+}
+
+.translate-dropdown > ul img {
   height: 2rem;
 }
 
-#dropdownMenuButton > div img {
+.translate-dropdown > div img {
   height: inherit;
   padding: 10px;
 }
 
-#dropdownMenuButton a::after {
+.translate-dropdown a::after {
   animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
 }
 
 #line-container {
   position: fixed;
   top: 10vh;
-  right: 0;
   z-index: 100;
 }
 
@@ -312,7 +315,7 @@ body {top: 0px!important;}
 }
 
 .line > div {
-  background-color: white;
+  background-color: #5A7D7C;
   height: -webkit-fill-available;
 }
 
@@ -354,4 +357,9 @@ body {top: 0px!important;}
     height: 60px;
     font-size: 100%;
   }
+}
+
+#projectNavbar {
+  background-color: white;
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
