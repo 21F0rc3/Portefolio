@@ -8,7 +8,7 @@ def getProjectContent(project_name):
 
     project_sections = getProjectSections(this_project.id)
 
-    return render_template("/layouts/project.html", project=this_project, sections=project_sections)
+    return render_template("/layouts/project.html", project=readProject(this_project), sections=project_sections)
 
 
 """

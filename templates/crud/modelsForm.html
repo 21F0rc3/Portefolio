@@ -36,6 +36,10 @@
             {% with input='image' %}
                 {% include "/includes/uploadFile.html" %}
             {% endwith %}
+        {% elif header == 'filename' %}
+            {% with input='file' %}
+                {% include "/includes/uploadFile.html" %}
+            {% endwith %}
         {% else %}
             {% with input=header , value='' , placeholder='' %}
                 {% include "/includes/inputForm.html" %}

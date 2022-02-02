@@ -13,8 +13,18 @@ function editRow(elem, table_headers) {
   editFormDiv.show();
   var editForm = editFormDiv.find("form");
 
-  var i=0;
-  table_headers.forEach(header => {
-    editForm.children().eq(i).find("input").val(tr.children().eq(i++).html())
+  $(document).ready(function() {
+    var i=0;
+    
+    table_headers.forEach(header => {
+      if(editForm.children().eq(i).is("select")) {
+        editForm.children().eq(i).val(tr.children().eq(i).html());
+      }else{
+        editForm.children().eq(i).find("input").val(tr.children().eq(i).html());
+      }
+
+      i++;
+    });
   });
+
 }

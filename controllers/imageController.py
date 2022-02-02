@@ -27,14 +27,9 @@ def readImage(image_id):
 """
 def updateImage(request):
     """
-    updateImage = image.query.filter_by(id=request.form['image_id']).first()
+        @TODO
 
-    updateProject.image = request.form['image']
-    updateProject.logo_file = request.form['logo_file']
-    updateProject.description = request.form['description']
-    updateProject.keywords = request.form['keywords']
-
-    db.session.commit()
+        Basicamente elimina uma imagem e cria outra
     """
 
     return redirect(url_for('admin'))
@@ -45,7 +40,10 @@ def updateImage(request):
 def deleteImage(image_id):
     deleteImage = image.query.filter_by(id=image_id).first()
 
-    os.remove(os.path.join(app.config['IMAGES_FOLDER'], deleteImage.image_file))
+    try:
+        os.remove(os.path.join(app.config['IMAGES_FOLDER'], deleteImage.image_file))
+    except:
+        print("Não foi possivel eliminar a imagem. A imagem não existe. Contudo, foi corrigido na base de dados")
 
     db.session.delete(deleteImage)
     db.session.commit() 

@@ -21,21 +21,21 @@ def readSection(section):
     if(section.image_file_id != -1):
         image_file = readImage(section.image_file_id)
     else:
-        image_file = null
+        image_file = None
     
     if(section.content_file_id != -1):
         content_file = readFile(section.content_file_id)
     else:
         content_file = ""
 
-    return ReadableSectionObject(section.title,image_file,content_file)
+    return ReadableSectionObject(section.id,section.title,image_file,content_file)
     
 
 """
     Atualiza os dados de uma secção na base de dados
 """
 def updateSection(request):
-    updateSection = section.query.filter_by(id=request.form['section_id']).first()
+    updateSection = section.query.filter_by(id=request.form['id']).first()
 
     updateSection.title = request.form['title']
     updateSection.image_file_id = request.form['image_file_id']
@@ -73,7 +73,8 @@ def getProjectSections(project_id):
     return sections
 
 class ReadableSectionObject:
-    def __init__(self,title,image_file,content_file):
+    def __init__(self,id,title,image_file,content_file):
+        self.id=id
         self.title=title
         self.image_file=image_file
         self.content_file=content_file
