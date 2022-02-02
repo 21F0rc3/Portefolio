@@ -1,0 +1,6 @@
+<select name="{{ input }}" class="form-select">
+    <option value="-1">-- Choose --</option>
+    {% for model in models %}
+    <option value="{{ model[0] }}">{{ model[1] }}</option>
+    {% endfor %}    
+</select>

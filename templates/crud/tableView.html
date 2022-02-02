@@ -3,15 +3,13 @@
       {% for header in tables.table_headers %}
         <th>{{ header }}</th>
       {% endfor %}
-      <th>Edit</th>
       <th>Delete</th>
     </tr>
     {% for row in tables.table_content %}
     <tr>
         {% for columns in row %}
-        <td>{{ columns }}</td>
+        <td contenteditable="true" oninput="editRow(this, {{ tables.table_headers }})">{{ columns }}</td>
         {% endfor %}
-        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#edit{{ model }}{{ row[0] }}">Edit</button></td>
         <td><a href="{{ url_for('deleteRoute', table=model, id=row[0]) }}">Delete</a></td>
     </tr>
     {% endfor %}

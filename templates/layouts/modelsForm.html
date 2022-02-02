@@ -1,0 +1,9 @@
+<div class="mt-5">
+    <h1>{% block title %}{% endblock %}</h1>
+    <form method="post" action="{% block formAction %}{% endblock %}" enctype="multipart/form-data">
+      {% block formInputs %}
+      {% endblock %}
+
+      <input type="submit">
+    </form>
+</div>

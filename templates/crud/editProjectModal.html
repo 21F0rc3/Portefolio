@@ -9,8 +9,8 @@
               {% with input='name' , value=project[1] , placeholder='Project Name' %}
                   {% include "/includes/inputForm.html" %}
               {% endwith %}
-              {% with input='logo_file' , value=project[2] , placeholder='Project logo_file' %}
-                  {% include "/includes/inputForm.html" %}
+              {% with input='logo_file_id' , models=images %}
+                  {% include "/includes/selectForm.html" %}
               {% endwith %}
               {% with input='description' , value=project[3] , placeholder='Project description' %}
                   {% include "/includes/inputForm.html" %}

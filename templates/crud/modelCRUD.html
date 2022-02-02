@@ -1,0 +1,14 @@
+<!-- Table -->
+{% include "/crud/tableView.html" %}
+
+<!-- Edit Form -->
+<div id="editForm" style="display: none;">
+  {% with title="Edit "+model, show_id=true, formAction=url_for('updateRoute', table=model) %}
+      {% include "/crud/modelsForm.html" %}
+  {% endwith %}
+</div>
+
+<!-- Create Form -->
+{% with show_id=false, title="Create "+model, formAction=url_for('createRoute', table=model) %}
+  {% include "/crud/modelsForm.html" %}
+{% endwith %}

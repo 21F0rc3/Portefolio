@@ -4,22 +4,20 @@
       <div class="modal-body">
         <form method="post" action="{{ url_for('updateRoute', table='section') }}">
           {% with input='section_id' , value=section[0] , placeholder='Project ID' %}
-           {% include "/includes/inputForm.html" %}
+            {% include "/includes/inputForm.html" %}
           {% endwith %}
           {% with input='title' , value=section[1] , placeholder='Project Name' %}
             {% include "/includes/inputForm.html" %}
           {% endwith %}
-          {% with input='image_file' , value=section[2] , placeholder='Project logo_file' %}
-            {% include "/includes/inputForm.html" %}
+          {% with input='image_file_id' , models=images %}
+            {% include "/includes/selectForm.html" %}
           {% endwith %}
-          {% with input='content_file' , value=section[3] , placeholder='Project description' %}
-            {% include "/includes/inputForm.html" %}
+          {% with input='content_file_id' , models=files %}
+            {% include "/includes/selectForm.html" %}
           {% endwith %}
-          <select name="project_id" class="form-select">
-            {% for project in projects %}
-            <option value="{{ project[0] }}">{{ project[1] }}</option>
-            {% endfor %}    
-          </select>
+          {% with input='project_id' , models=projects %}
+            {% include "/includes/selectForm.html" %}
+          {% endwith %}
 
           <input class="mt-5" type="submit" data-bs-dismiss="modal">
         </form>   

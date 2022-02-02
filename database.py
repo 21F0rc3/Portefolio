@@ -11,6 +11,8 @@ fsqla.FsModels.set_db_info(db)
 # Import DB Tables
 import models.project
 import models.section
+import models.file
+import models.image
 from models.user import User
 from models.role import Role
 

@@ -1,0 +1,45 @@
+{% extends "/layouts/modelsForm.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block formAction %}
+    {{ formAction }}
+{% endblock %}
+
+{% block formInputs %}
+    {% for header in tables.table_headers %}
+        {% if header == 'id' %}
+            {% if show_id %}
+                {% with input=header , value='' , placeholder='' %}
+                    {% include "/includes/inputForm.html" %}
+                {% endwith %}
+            {%endif %}
+        {% elif header == 'logo_file_id' %}
+            {% with input='logo_file_id' , models=images %}
+                {% include "/includes/selectForm.html" %}
+            {% endwith %}
+        {% elif header == 'image_file_id' %}
+            {% with input='image_file_id' , models=images %}
+                {% include "/includes/selectForm.html" %}
+            {% endwith %}
+        {% elif header == 'content_file_id' %}
+            {% with input='content_file_id' , models=files %}
+                {% include "/includes/selectForm.html" %}
+            {% endwith %}
+        {% elif header == 'project_id' %}
+            {% with input='project_id' , models=projects %}
+                {% include "/includes/selectForm.html" %}
+            {% endwith %}
+        {% elif header == 'image_file' %}
+            {% with input='image' %}
+                {% include "/includes/uploadFile.html" %}
+            {% endwith %}
+        {% else %}
+            {% with input=header , value='' , placeholder='' %}
+                {% include "/includes/inputForm.html" %}
+            {% endwith %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

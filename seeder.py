@@ -1,5 +1,7 @@
 from models.project import project
 from models.section import section
+from models.file import file
+from models.image import image
 
 from database import db
 

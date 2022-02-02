@@ -41,3 +41,15 @@ app.config['LANGUAGES'] = {
   'pt': 'Portuguese'
 }
 """
+
+###############################
+#           Files             #         
+###############################
+
+FILES_FOLDER = "C:/Users/Gabri/OneDrive/Ambiente de Trabalho/Portefolio/static/files"
+IMAGES_FOLDER = "C:/Users/Gabri/OneDrive/Ambiente de Trabalho/Portefolio/static/images"
+
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+app.config['FILES_FOLDER'] = FILES_FOLDER
+app.config['IMAGES_FOLDER'] = IMAGES_FOLDER

@@ -1,6 +1,6 @@
 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 p-4 mx-0 primary-color">
       {% for project in projects %}
-        {% with title=project.name, description=project.description, keywords=project.keywords, img_url=url_for('static', filename=project.logo_file), page_url=url_for('seeProjectDetails', project_name=project.name) %}
+        {% with title=project.name, description=project.description, keywords=project.keywords, img_url=project.logo_file, page_url=url_for('seeProjectDetails', project_name=project.name) %}
           {% include '/works/workTemplate.html' %}
         {% endwith %}
       {% endfor %}

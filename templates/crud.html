@@ -10,23 +10,34 @@
             <select v-model="model">
                 <option>Project</option>
                 <option>Section</option>
+                <option>File</option>
+                <option>Image</option>
             </select>
         </div>
 
         {# Sera apresentado a respetiva form do model escolhido sem a pagina ser recarregada #}
         <div v-if="model == 'Project'" class="p-5">
-            {% with tables=tables[0], model='project' %}
-                {% include "/crud/tableView.html" %}
-                {% include "/crud/createForm.html" %}
+            {% with tables=tables[0], images=tables[3].table_content, model='project' %}
+                {% include "/crud/modelCRUD.html" %}
             {% endwith %}
-
-            {% for project in tables[0].table_content %}
-                <!-- Inclui um modal que e prenchido dinamicamente -->
-                {% with project=project %} 
-                    {% include 'crud/editProjectModal.html' %}
-                {% endwith %}
-            {% endfor %}
         </div>
+        <div v-else-if="model == 'Section'" class="p-5">
+            {% with tables=tables[1], projects=tables[0].table_content, files=tables[2].table_content, images=tables[3].table_content, model='section' %}
+                {% include "/crud/modelCRUD.html" %}
+            {% endwith %}
+        </div>
+        <div v-else-if="model == 'File'" class="p-5">
+            {% with tables=tables[2], model='file' %}
+                {% include "/crud/modelCRUD.html" %}
+            {% endwith %}
+        </div>
+        <div v-else-if="model == 'Image'" class="p-5">
+            {% with tables=tables[3], model='image' %}
+                {% include "/crud/modelCRUD.html" %}
+            {% endwith %}
+        </div>
+
+        {#
         <div v-else-if="model == 'Section'" class="p-5">
             {% with tables=tables[1], model='section' %}
                 {% include "/crud/tableView.html" %}
@@ -35,18 +46,44 @@
 
             {% for section in tables[1].table_content %}
                 <!-- Inclui um modal que e prenchido dinamicamente -->
-                {% with section=section, projects=tables[0].table_content %} 
+                {% with section=section, projects=tables[0].table_content, files=tables[2].table_content, images=tables[3].table_content %} 
                     {% include 'crud/editSectionModal.html' %}
                 {% endwith %}
             {% endfor %}
         </div>
+        <div v-else-if="model == 'File'" class="p-5">
+            {% with tables=tables[2], model='file' %}
+                {% include "/crud/tableView.html" %}
+                {% include "/crud/createForm.html" %}
+            {% endwith %}
+            
+            {#{% for section in tables[1].table_content %}
+                <!-- Inclui um modal que e prenchido dinamicamente -->
+                {% with section=section, projects=tables[0].table_content %} 
+                    {% include 'crud/editSectionModal.html' %}
+                {% endwith %}
+            {% endfor %}#}
+        {#</div>
+        <div v-else-if="model == 'Image'" class="p-5">
+            {% with tables=tables[3], model='image' %}
+                {% include "/crud/tableView.html" %}
+                {% include "/crud/createForm.html" %}
+            {% endwith %}
+            
+            {#{% for section in tables[1].table_content %}
+                <!-- Inclui um modal que e prenchido dinamicamente -->
+                {% with section=section, projects=tables[0].table_content %} 
+                    {% include 'crud/editSectionModal.html' %}
+                {% endwith %}
+            {% endfor %}#}
+        {#</div>#}
+
     </div>
 {% endblock %}
 
 {% block scripts %}
     <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-
     <!-- Front-End para o CRUD -->
     <script src="{{ url_for('static', filename='js/crud.js') }}"></script>
 {% endblock %}

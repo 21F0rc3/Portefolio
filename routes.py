@@ -9,18 +9,18 @@ from models.project import project
 from flask_babel import Babel, gettext
 
 from controllers.crudController import *
-from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject
+from controllers.projectController import getProjectContent, createProject, readProject, updateProject, deleteProject, readProjects
 from controllers.sectionController import createSection, updateSection, deleteSection
 
 @app.route("/")
 def index():
-    projects = project.query.all()
+    projects = readProjects()
 
     return render_template("index.html", projects=projects)
 
 @app.route("/projects/<project_name>")
 def seeProjectDetails(project_name):
-    return readProject(project_name)
+    return getProjectContent(project_name)
 
 @app.route("/sendEmail", methods=['POST'])
 def sendEmail():
@@ -44,7 +44,7 @@ def sendEmail():
 def admin():
     return crudPage()
 
-@app.route("/admin/create/<table>", methods=['POST'])
+@app.route("/admin/create/<table>", methods=['GET','POST'])
 def createRoute(table):
     return createTableRecord(table, request)
 

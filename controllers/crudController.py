@@ -8,6 +8,8 @@ def crudPage():
 
     tables.append(Table(project))
     tables.append(Table(section))
+    tables.append(Table(file))
+    tables.append(Table(image))
 
     """
     @todo Fazer o array de tabelas ser preenchidos por todos os models da db
@@ -34,6 +36,10 @@ def formatQueryRows(model, queryResults):
         return formatQueryRowsIntoProject(queryResults)
     if model == section:
         return formatQueryRowsIntoSection(queryResults)
+    if model == file:
+        return formatQueryRowsIntoFile(queryResults)
+    if model == image:
+        return formatQueryRowsIntoImage(queryResults)
     else:
         print ("ERRO: Não foi reconhecido o model em formatQueryRows()")
         return url_for('index')
@@ -48,7 +54,7 @@ def formatQueryRowsIntoProject(queryResults):
     results = []
 
     for row in queryResults:
-        rowColumns = [row.id,row.name,row.logo_file,row.description,row.keywords]
+        rowColumns = [row.id,row.name,row.logo_file_id,row.description,row.keywords]
         results.append(rowColumns)
 
     return results
@@ -63,7 +69,37 @@ def formatQueryRowsIntoSection(queryResults):
     results = []
 
     for row in queryResults:
-        rowColumns = [row.id,row.title,row.image_file,row.content_file,row.project_id]
+        rowColumns = [row.id,row.title,row.image_file_id,row.content_file_id,row.project_id]
+        results.append(rowColumns)
+
+    return results
+
+"""
+    Fortmata os resultados da tabela de File para a classe Table
+
+    Isto é importante para depois usarmos a classe Table para percorrer os resultados de todas as tabelas nas templates.
+    Ele junta os dados de uma section num array com cada uma das colunas e junta numa lista de todas as linhas dos resultados da query
+"""
+def formatQueryRowsIntoFile(queryResults):
+    results = []
+
+    for row in queryResults:
+        rowColumns = [row.id,row.filename]
+        results.append(rowColumns)
+
+    return results
+
+"""
+    Fortmata os resultados da tabela de Image para a classe Table
+
+    Isto é importante para depois usarmos a classe Table para percorrer os resultados de todas as tabelas nas templates.
+    Ele junta os dados de uma section num array com cada uma das colunas e junta numa lista de todas as linhas dos resultados da query
+"""
+def formatQueryRowsIntoImage(queryResults):
+    results = []
+
+    for row in queryResults:
+        rowColumns = [row.id,row.image_file]
         results.append(rowColumns)
 
     return results
@@ -81,6 +117,10 @@ def deleteTableRecord(table, id):
         return deleteProject(id)
     if table == 'section':
         return deleteSection(id)
+    if table == 'file':
+        return deleteFile(id)
+    if table == 'image':
+        return deleteImage(id)
     else:
         print ("ERROR: Não foi renconhecida a tabela em deleteFromTable()")
         return url_for('index')
@@ -97,6 +137,10 @@ def createTableRecord(table, request):
         return createProject(request)
     if table == 'section':
         return createSection(request)
+    if table == 'file':
+        return createFile(request)
+    if table == 'image':
+        return createImage(request)
     else:
         print ("ERROR: Não foi renconhecida a tabela em insertIntoTable()")
         return url_for('index')
@@ -113,6 +157,10 @@ def updateTableRecord(table, request):
         return updateProject(request)
     if table == 'section':
         return updateSection(request)
+    if table == 'file':
+        return updateFile(request)
+    if table == 'image':
+        return updateImage(request)
     else:
         print ("ERROR: Não foi renconhecida a tabela em insertIntoTable()")
         return url_for('index')
