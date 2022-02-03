@@ -2,9 +2,9 @@ function googleTranslateElementInit() {
     new google.translate.TranslateElement({/*pageLanguage: 'en',*/includedLanguages: 'en,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
   }
   
-var selectedLang = 'en';
+var selectedLang;
 
-$(".dropdown-menu").find("a").click(function() {   
+$(".dropdown-menu").find("a").click(function() {
   var newElem = "<div class='line lineAnimation'><div class='sixth-color'>"+$(this).html()+"</div></div>";
 
   $(".line").remove();
@@ -26,13 +26,13 @@ function translateLanguage(lang) {
       switch(lang) {
         case 'en':
           if(selectedLang != 'en') {
-            $frame.contents().find('.goog-te-menu2-item').get(0).click();
+            $frame.contents().find('a').get(0).click();
             break;
           }
           break;
         case 'pt':
           if(selectedLang != 'pt') {
-            $frame.contents().find('.goog-te-menu2-item').get(0).click();
+            $frame.contents().find('a').get(1).click();
             break;
           }
           break;
